@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "tanktics"
+version = "0.1.0"
+description = ""
+authors = ["eitanwass <eitanwass@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.111.0"
+motor = "^3.4.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
