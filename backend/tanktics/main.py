@@ -1,6 +1,10 @@
-from fastapi import FastAPI
+from typing import Annotated
+
+from fastapi import FastAPI, Depends
 from starlette.middleware.cors import CORSMiddleware
-from tanktics.src.routers import tanks, room
+from tanktics.config import get_settings, Settings
+from tanktics.routers import tanks, room, auth
+from tanktics.routers.auth import get_current_user
 
 app = FastAPI()
 
@@ -19,17 +23,29 @@ app.add_middleware(
 app.include_router(
     tanks.router,
     prefix="/api/tanks",
+    dependencies=[Depends(get_current_user)],
 )
 
 app.include_router(
     room.router,
     prefix="/api/room",
+    dependencies=[Depends(get_current_user)],
+)
+
+app.include_router(
+    auth.router,
+    prefix="/api/auth",
 )
 
 
 @app.get("/health")
 async def health():
     return "pong"
+
+
+@app.get("/settings")
+async def get_settings(settings: Annotated[Settings, Depends(get_settings)]):
+    return settings
 
 
 if __name__ == "__main__":

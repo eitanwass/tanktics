@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List, Generic, TypeVar
 
 from motor.motor_asyncio import AsyncIOMotorClient
-from tanktics.src.models.base_schema import BaseSchema
+from tanktics.models.base_schema import BaseSchema
 from typing_extensions import Type
 
 

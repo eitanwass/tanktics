@@ -2,10 +2,10 @@ from typing import List
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from tanktics.src.dals import tanks_dal
-from tanktics.src.models.base_schema import BaseSchema
-from tanktics.src.models.position import Position
-from tanktics.src.models.tank import Tank
+from tanktics.dals import tanks_dal
+from tanktics.models.base_schema import BaseSchema
+from tanktics.models.position import Position
+from tanktics.models.tank import Tank
 
 router = APIRouter()
 

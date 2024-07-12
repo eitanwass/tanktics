@@ -1,7 +1,7 @@
 from typing import Optional, Dict, Any, List
 
-from tanktics.src.dals.base_dal import BaseDal
-from tanktics.src.models.tank import Tank
+from tanktics.dals.base_dal import BaseDal
+from tanktics.models.tank import Tank
 from typing_extensions import Type
 
 

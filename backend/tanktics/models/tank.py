@@ -1,5 +1,5 @@
-from tanktics.src.models.base_schema import BaseSchema
-from tanktics.src.models.position import Position
+from tanktics.models.base_schema import BaseSchema
+from tanktics.models.position import Position
 
 
 class Tank(BaseSchema):

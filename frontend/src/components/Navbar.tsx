@@ -1,6 +1,7 @@
 import React from "react";
 import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
 import {AccountCircle} from "@mui/icons-material";
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
 	return (
@@ -10,7 +11,7 @@ const Navbar = () => {
 					MyApp
 				</Typography>
 				<Box sx={{ flexGrow: 1, display: 'flex', gap: 2 }}>
-					<Button color={"inherit"}>Browse</Button>
+					<Button color={"inherit"} component={Link} to={"/browse"}>Browse</Button>
 					<Button color={"inherit"}>My Games</Button>
 					<Button color={"inherit"}>Customize</Button>
 				</Box>

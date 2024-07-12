@@ -2,14 +2,13 @@ FROM python:3.10
 
 WORKDIR /backend
 
-COPY ./pyproject.toml /backend/
-COPY ./poetry.lock /backend/
+COPY ./pyproject.toml .
+COPY ./poetry.lock .
 
 RUN pip install poetry
 RUN poetry install
 
-COPY ./tanktics/main.py /backend/tanktics/
-COPY ./tanktics/src /backend/tanktics/src
+COPY ./tanktics/ tanktics/
 
 RUN poetry install
 

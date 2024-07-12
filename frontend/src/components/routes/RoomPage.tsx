@@ -6,6 +6,7 @@ import {useSearchParams} from "react-router-dom";
 import {TanksProvider} from "../../contexts/TanksContext";
 import Board from "../board/Board";
 import {GridProvider} from "../../contexts/GridContext";
+import Title from "../Title";
 
 
 const RoomPage = () => {
@@ -14,7 +15,9 @@ const RoomPage = () => {
 
 	const {data: room} = useQuery(
 		["room", roomId],
-		() => getRoomById(roomId!),
+		() => Promise.all([
+			getRoomById(roomId!),
+		]),
 		{
 			refetchInterval: false,
 			enabled: !_.isNil(roomId),
@@ -24,9 +27,9 @@ const RoomPage = () => {
 	return (
 		<GridProvider>
 			<TanksProvider roomId={roomId}>
-				<div>
-					{ room?.name }
-				</div>
+				<Title>
+					{ room?.name ?? "Room not found" }
+				</Title>
 				<Board />
 			</TanksProvider>
 		</GridProvider>

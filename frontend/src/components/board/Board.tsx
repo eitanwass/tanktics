@@ -25,15 +25,27 @@ const Board = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [dimensions, setDimensions] = useState({width: 0, height: 0});
 
+  useEffect(() => (
+    window.addEventListener("resize", () => {
+      if (divRef.current?.offsetHeight && divRef.current?.offsetWidth) {
+        console.debug("new", divRef.current.offsetWidth, divRef.current.offsetHeight);
+        setDimensions({
+          width: divRef.current.offsetWidth,
+          height: divRef.current.offsetHeight
+        })
+      }
+    })
+  ), [])
 
   useEffect(() => {
     if (divRef.current?.offsetHeight && divRef.current?.offsetWidth) {
+      console.debug("new", divRef.current.offsetWidth, divRef.current.offsetHeight);
       setDimensions({
         width: divRef.current.offsetWidth,
         height: divRef.current.offsetHeight
       })
     }
-  }, [divRef?.current]);
+  }, [divRef?.current?.offsetWidth, divRef?.current?.offsetHeight]);
 
   const lines = useMemo(
     () => {

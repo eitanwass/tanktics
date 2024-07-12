@@ -1,8 +1,8 @@
 from typing import List
 
 from fastapi import APIRouter
-from tanktics.src.dals import rooms_dal
-from tanktics.src.models.room import Room
+from tanktics.dals import rooms_dal
+from tanktics.models.room import Room
 
 router = APIRouter()
 
@@ -23,3 +23,11 @@ async def get_all_rooms() -> List[Room]:
 )
 async def get_room_by_id(room_id: str) -> Room:
     return await rooms_dal.get_room_by_id(room_id)
+
+
+@router.post(
+    "/{room_id:str}/join",
+    name="Join room",
+)
+async def join_room_by_id(room_id: str) -> None:
+    await rooms_dal.add_user_to_room(room_id, None)

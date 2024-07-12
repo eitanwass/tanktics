@@ -11,11 +11,12 @@ services:
   backend:
     build: ./backend
     restart: on-failure
+    env_file:
+      - ./backend/.env
     ports:
       - "8000:8000"
     volumes:
-      - ./backend/tanktics/main.py:/backend/tanktics/main.py
-      - ./backend/tanktics/src:/backend/tanktics/src
+      - ./backend/tanktics/:/backend/tanktics/
     depends_on:
       - mongodb
 

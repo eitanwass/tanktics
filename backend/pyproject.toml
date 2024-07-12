@@ -8,6 +8,10 @@ authors = ["eitanwass <eitanwass@gmail.com>"]
 python = "^3.10"
 fastapi = "^0.111.0"
 motor = "^3.4.0"
+py-bcrypt = "^0.4"
+pyjwt = "^2.8.0"
+pydantic-settings = "^2.3.4"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
