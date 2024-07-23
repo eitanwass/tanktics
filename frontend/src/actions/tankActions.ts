@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "./index";
 import {Tank} from "../types/tank";
 import {Position} from "../types/position";
 

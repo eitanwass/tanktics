@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "./index";
 import {User} from "../types/user";
 
 const axiosUsers = axios.create({

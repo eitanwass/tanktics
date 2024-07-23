@@ -1,7 +1,7 @@
 import React from "react";
 import {useQuery} from "react-query";
 import {getAllRooms} from "../../actions/roomActions";
-import {default as Grid} from "@mui/material/Unstable_Grid2";
+import Grid from '@mui/material/Grid';
 import {Favorite, PlayCircleOutline, Share} from "@mui/icons-material";
 import _ from "lodash";
 import {Card, CardHeader, CardContent, CardActions, IconButton} from "@mui/material";

@@ -6,6 +6,7 @@ import RootPage from "./components/routes/RootPage";
 import ErrorPage from "./components/routes/ErrorPage";
 import RoomBrowserPage from "./components/routes/RoomBrowserPage";
 import RoomPage from "./components/routes/RoomPage";
+import SignInPage from "./components/routes/SignInPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -28,6 +29,10 @@ const App = () => {
             }
           ]
         },
+        {
+          path: "/login",
+          element: <SignInPage />
+        }
       ])
     ),
     []

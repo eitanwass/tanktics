@@ -2,6 +2,7 @@ import React from "react";
 import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
 import {AccountCircle} from "@mui/icons-material";
 import {Link} from "react-router-dom";
+import {logout} from "../actions/authActions";
 
 const Navbar = () => {
 	return (
@@ -20,6 +21,7 @@ const Navbar = () => {
 					edge={"end"}
 					color={"inherit"}
 					aria-label={"Current user account"}
+					onClick={() => logout()}
 				>
 					<AccountCircle/>
 				</IconButton>

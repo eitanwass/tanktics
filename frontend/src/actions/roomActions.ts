@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "./index";
 import {Room} from "../types/room";
 
 const axiosRooms = axios.create({
